@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0a10" />
+  <meta name="description" content="A little world of my own. Step into Damian Lujan’s personal room." />
+  <meta property="og:title" content="Damian Lujan — My own little world" />
+  <meta property="og:description" content="Come in. Look around. Make yourself at home." />
+  <meta property="og:image" content="https://damianlujan.vercel.app/assets/social.jpg" />
+  <meta property="og:url" content="https://damianlujan.vercel.app/" />
+  <link rel="canonical" href="https://damianlujan.vercel.app/" />
+  <title>Damian Lujan</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/website.css" />
+  <link rel="stylesheet" href="/gallery.css" />
+  <link rel="stylesheet" href="/palette.css" />
+</head>
+<body class="website-home night entrance-pending">
+  <section id="entrance" class="entrance" aria-labelledby="entrance-name">
+    <div class="entrance-content">
+      <h1 id="entrance-name">Damian <em>Lujan.</em></h1>
+      <button id="enter-world" class="entrance-button" type="button" autofocus><span>Enter</span><span aria-hidden="true">↗</span></button>
+      <p id="entrance-status" class="entrance-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+  <header class="website-header" id="website-header" inert>
+    <a class="website-brand" href="#home" aria-label="Damian Lujan, home">dl.</a>
+    <nav aria-label="Website navigation"><a href="#home" class="selected">Home</a><a href="#my-world">My world</a><a href="#gallery">Gallery</a></nav>
+    <button class="website-enter" data-room-view="room">Enter the room <span>↗</span></button>
+  </header>
+  <main id="website-main" inert>
+  <section id="home" class="home-hero" aria-labelledby="home-title">
+    <div class="hero-copy"><h1 id="home-title">Damian<br><em>Lujan.</em></h1><div class="hero-actions"><button class="primary-link" data-room-view="room">Enter my world <span>↗</span></button><a class="quiet-link" href="#my-world">Look around <span>↓</span></a></div></div>
+    <button class="scene-preview-button" data-room-view="room" aria-label="Enter Damian’s interactive room"><span><span class="preview-dot"></span> THE ROOM <span>↗</span></span></button>
+    <div class="home-bottom"><a href="#my-world"><span class="scroll-line"></span> SCROLL TO EXPLORE</a><span>01 — 03</span></div>
+    <section id="experience" data-view="room" aria-label="Interactive room preview">
+    <div id="world" aria-label="An interactive 3D room belonging to Damian Lujan"></div>
+    <div id="css-world"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header room-header">
+      <a class="identity" href="#room" aria-label="Damian Lujan, return to the room"><span class="monogram">dl.</span><span>damianlujan<span class="identity-sub">MY OWN LITTLE WORLD</span></span></a>
+      <div class="top-controls">
+        <button id="sound" class="round-button" aria-label="Turn ambient sound on" title="Ambient sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m11 5-5 4H3v6h3l5 4V5Z"/><path class="sound-waves" d="M15 8c3 2 3 6 0 8m3-11c5 4 5 10 0 14"/><path class="sound-off" d="m16 9 5 6m0-6-5 6"/></svg></button>
+        <button id="fullscreen" class="round-button" aria-label="Enter fullscreen" title="Fullscreen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+      </div>
+    </header>
+    <button id="exit-world" class="exit-world" hidden>← Back to website</button>
+    <div id="loading" role="status"><span class="loading-mark">dl.</span><span>Making room for you<span class="loading-dots">…</span></span><div class="loading-track"><div id="loading-progress"></div></div></div>
+    <div id="fallback" hidden><h1>Welcome to my room.</h1><p>This browser couldn’t start the 3D scene. You can still explore my desktop.</p><button id="fallback-desktop">Open my desktop ↗</button></div>
+    <div id="hover-label" aria-hidden="true"></div>
+    <aside class="room-caption"><span class="eyebrow" id="view-number">01 / THE ROOM</span><h2 id="view-title">Damian<br><em>Lujan.</em></h2></aside>
+    <aside id="object-note" aria-live="polite" hidden>
+      <span class="eyebrow" id="object-number"></span><h2 id="object-title"></h2><p id="object-description"></p>
+      <div class="object-action-row"><button id="object-action" hidden></button><button id="rig-reset" class="rig-reset" hidden aria-label="Reset drilling cycle" title="Reset drilling cycle">↺</button></div>
+      <div id="rig-controls" hidden>
+        <div class="rig-control-line"><span class="rig-status"><span class="rig-status-dot" aria-hidden="true"></span><span id="rig-status">Ready to drill</span></span><button id="rig-lights" aria-pressed="false">Work lights <span>Off</span></button></div>
+        <div class="rig-progress" aria-hidden="true"><span id="rig-progress-fill"></span></div>
+      </div>
+    </aside>
+    <aside id="collection-picker" hidden aria-label="Explore the collection"><span class="eyebrow">A FEW THINGS I KEEP CLOSE</span><button data-object="midway">01 <span>USS Midway</span> ↗</button><button data-object="rig">02 <span>The land rig</span> ↗</button><button data-object="rocket">03 <span>The rocket</span> ↗</button></aside>
+    <footer class="site-footer">
+      <span class="interaction-hint"><span class="drag-icon">↔</span> Drag to look around <span class="hint-divider">·</span> Click to explore</span>
+      <nav class="room-nav" aria-label="Room views">
+        <button data-view="room" class="active" aria-current="true"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3"><path d="m3 8 7-5 7 5v9H3V8Z"/><path d="M7 17v-6h6v6"/></svg><span>The room</span></button>
+        <button data-view="desk"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="16" height="11" rx="1.5"/><path d="M10 14v3m-4 0h8"/></svg><span>My desk</span></button>
+        <button data-view="collection"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="2" width="14" height="16" rx="1.5"/><path d="M3 10h14m-9-7v6m4 2v6"/></svg><span>The collection</span></button>
+      </nav>
+      <span class="room-time"><span class="live-dot"></span><span id="local-time">HERE & NOW</span></span>
+    </footer>
+    <button id="back-button" hidden><span>↙</span> Back to the room <kbd>ESC</kbd></button>
+    <div id="live-status" class="sr-only" role="status" aria-live="polite"></div>
+    </section>
+  </section>
+  <section id="my-world" class="explore-section" aria-labelledby="explore-title">
+    <div class="section-topline"><span>01 / EXPLORE</span><span>CHOOSE A WAY IN</span></div>
+    <div class="explore-intro"><h2 id="explore-title">My <em>world.</em></h2><p>A room to explore.<br>A view to get lost in.</p></div>
+    <div class="explore-list">
+      <button class="explore-row" data-room-view="desk"><span class="row-index">01</span><span class="row-name">The desk</span><span class="row-detail">Open the computer</span><span class="row-arrow">↗</span></button>
+      <button class="explore-row" data-room-view="midway"><span class="row-index">02</span><span class="row-name">The coast</span><span class="row-detail">USS Midway</span><span class="row-arrow">↗</span></button>
+      <button class="explore-row" data-room-view="rig"><span class="row-index">03</span><span class="row-name">The land</span><span class="row-detail">The drilling rig</span><span class="row-arrow">↗</span></button>
+      <button class="explore-row" data-room-view="rocket"><span class="row-index">04</span><span class="row-name">Beyond</span><span class="row-detail">Launch the rocket</span><span class="row-arrow">↗</span></button>
+    </div>
+  </section>
+  <section id="gallery" class="gallery-section" aria-labelledby="gallery-title">
+    <div class="section-topline"><span>02 / THE VIEW</span><span>DAY INTO NIGHT</span></div>
+    <div class="gallery-heading"><h2 id="gallery-title">From the coast.<br><em>Into the night.</em></h2><button class="quiet-link" data-gallery="panorama">Take a closer look <span>↗</span></button></div>
+    <button class="panorama-preview" data-gallery="panorama" aria-label="Open the full coastal artwork"><img src="/assets/coast-desktop.webp" alt="USS Midway and a coastal city in daylight, blending into inland terrain, a land drilling rig, a hillside house, stars, a full moon, and a launching rocket." loading="lazy"/><span class="image-corner">EXPLORE THE VIEW <span>↗</span></span></button>
+    <div class="gallery-caption"><span>THE COAST · THE LAND · BEYOND</span><button data-gallery="portrait">View the portrait version ↗</button></div>
+  </section>
+  <footer class="website-footer"><div class="footer-signature">Damian <em>Lujan.</em></div><div class="footer-bottom"><a href="#home">Back to the top ↑</a><button data-room-view="room">Enter the room ↗</button><span>damianlujan</span></div></footer>
+  </main>
+  <div id="desktop" aria-label="Damian’s interactive computer" inert>
+    <div class="os-wallpaper"></div>
+    <div class="os-menubar"><strong><span class="os-logo">dl.</span> Damian’s computer</strong><span id="os-date"></span><span>●</span></div>
+    <div class="desktop-greeting"><h2>Damian<br>Lujan.</h2></div>
+    <div class="desktop-icons">
+      <button data-app="world"><span class="folder-icon"></span><span>My world</span></button>
+      <button data-app="gallery"><span class="picture-icon">↗</span><span>The view</span></button>
+      <button data-app="notes"><span class="note-icon">≡</span><span>Notebook</span></button>
+    </div>
+    <section id="os-window" hidden>
+      <div class="window-titlebar"><button id="close-window" aria-label="Close desktop window">×</button><span id="window-title">My world</span><span class="window-mark">DL / PERSONAL</span></div>
+      <div id="window-content"></div>
+    </section>
+    <div class="os-dock"><button data-app="world" title="My world"><span class="dock-folder">▰</span><span>My world</span></button><button data-app="gallery" title="The view"><span class="dock-image">◈</span><span>The view</span></button><button data-app="notes" title="Notebook"><span class="dock-note">≡</span><span>Notebook</span></button><span class="dock-separator"></span><button id="leave-desktop" title="Back to the room"><span class="dock-exit">↙</span><span>Step away</span></button></div>
+  </div>
+  <noscript><div class="noscript-message">This little world needs JavaScript to come to life.</div></noscript>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
